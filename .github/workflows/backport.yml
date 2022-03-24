@@ -22,6 +22,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           auto_backport_label_prefix: backport-to-
 
-      - name: Backport log
+      - name: Backport log (info)
         if: always()
-        run: cat /home/runner/.backport/backport.log
+        run: cat /home/runner/.backport/backport.info.log
+      - name: Backport log (debug)
+        if: always()
+        run: cat /home/runner/.backport/backport.debug.log        
